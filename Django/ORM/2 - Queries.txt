@@ -46,7 +46,11 @@ Person.objects.all()[0].doc
 Person.objects.all()[1].doc
 Person.objects.all()[2].doc 
 
-## Prefetch_related
+## Select_related - Faz o Join em SQLite 
+# Suporta apenas um-para-um e single-foregin keys 
+
+
+## Prefetch_related - Faz o join em Python 
 # Para inicializar o objeto com todo seus valores preenchidos é necessáio
 Person.objects.prefetch_related('doc').all()[3].doc
 Person.objects.prefetch_related('doc').all()
@@ -59,4 +63,3 @@ Person.objects.all().values_list('id', 'first_name', 'age')
 from django.forms.models import model_to_dict
 p = Person.objects.get(id=2)
 model_to_dict(p)
-

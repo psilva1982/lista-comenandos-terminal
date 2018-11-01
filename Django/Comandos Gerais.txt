@@ -30,3 +30,6 @@ python manage.py shell
 pip install Pillow 
 python manage.pu makemigrations
 python manage.py migrate
+
+# Django Debug Toolbar 
+python manage.py collectstatic
