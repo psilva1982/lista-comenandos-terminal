@@ -1,0 +1,11 @@
+# Order by
+Person.objects.order_by('id')
+
+# Decrescente
+Person.objects.order_by('-id')
+
+# Agrupada
+Person.objects.order_by('id', 'first_name')
+
+# Ordenar por objetos relacionados 
+Person.objects.order_by('doc__num_doc')

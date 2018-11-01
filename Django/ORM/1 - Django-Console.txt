@@ -4,7 +4,7 @@ DJANGO - ORM - Console
 python manage.py shell
 
 # Importar os models da app registrada em settings.py 
-from Person.model import * 
+from clientes.models import * 
 
 # Pegar o último cliente do banco de dados 
 p = Person.objects.last()

@@ -1,0 +1,62 @@
+# Documentação Oficial
+https://docs.djangoproject.com/pt-br/2.1/ref/models/querysets/
+
+# Pesquisar todos os produtos que contenham 'ma'
+Produto.objects.filter(descricao__contains='ma')
+
+# Não ignora o case sensetive - Não funciona no SQLite
+Produto.objects.filter(descricao__icontains='ma')
+
+# Lista os produtos com preço de 5, 10 ou 15
+Produto.objects.filter(preco__in=[5,10, 15])
+
+# Maior que - gt
+Produto.objects.filter(preco__gt=10)
+
+# Maior ou igual que - gte 
+Produto.objects.filter(preco__gte=7)
+
+# Menor que - lt
+Produto.objects.filter(preco__lt=7)
+
+# Menor ou igual que - lte
+Produto.objects.filter(preco__lte=7)
+
+# Começa com - startwith  
+Produto.objects.filter(descricao__startswith='m') 
+
+# Lista produtos com preço entre 5 e 8
+Person.objects.filter(age__range=(30,40))
+
+# Melhor performance p/ verificar se existe tal dado no banco 
+# em comparação a outras funções como len, count. O exist() 
+# retornará um boolean
+Produto.objects.filter(descricao__contains='ma').exists()
+
+### LAZY LODING ### 
+Por padrão o Django fará duas consultas 
+
+# Neste momento a lista é populada apenas com a chave do documento e não 
+o valor em si do documento
+Person.objects.all()
+
+# Para obter o valor do documento o Django fará outra consulta no momento
+# da exeução da função 
+Person.objects.all()[0].doc
+Person.objects.all()[1].doc
+Person.objects.all()[2].doc 
+
+## Prefetch_related
+# Para inicializar o objeto com todo seus valores preenchidos é necessáio
+Person.objects.prefetch_related('doc').all()[3].doc
+Person.objects.prefetch_related('doc').all()
+
+## ValueList() - Apenas para leitura 
+# Retorna tuplas contendo apenas os atributos passados para a função 
+Person.objects.all().values_list('id', 'first_name', 'age')
+
+## Converte o modelo em dicionário - auxília no tráfego para json
+from django.forms.models import model_to_dict
+p = Person.objects.get(id=2)
+model_to_dict(p)
+
