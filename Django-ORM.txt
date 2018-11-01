@@ -1,0 +1,40 @@
+DJANGO - ORM - Console 
+
+# Abrir console Python com a aplicação do Django caregado
+python manage.py shell
+
+# Importar os models da app registrada em settings.py 
+from Person.model import * 
+
+# Pegar o último cliente do banco de dados 
+p = Person.objects.last()
+
+# Imprimindo o valor de p na tela 
+p 
+
+# Pegar todas as pessoas 
+persons = Person.objects.all()
+
+# Criar uma person no banco (entre parenteses os arbributos necessários) 
+p = Person.objects.create(nome='Jhon')
+p.save()
+
+# Cria um objeto Documento, define o valor do número do documento e salva no banco
+d = Documento.objects.create()
+d.nun_doc = '12345'
+d.save()
+
+# Atribui o documento d a person p e salva no banco
+p.doc = d 
+p.save()
+
+# Comandos possíveis para um objecto 
+dir(p)
+
+# Métodos com __ (double underscore) 	- Utilizados pela própria linguagem
+# Métodos com _  (um underscore) 	- Métodos privados
+# Métodos com  	 (normais) 		- Uso comum
+
+# Recuperar um registro - Recupera a Person de ID=1 
+# Serve apenas para atributos únicos
+p = Person.objects.get(id=1)

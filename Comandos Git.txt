@@ -1,0 +1,9 @@
+# Comandos Git
+
+# Iniciando um novo repositório
+git init 
+
+# Para não incluir um diretório no versionamento é necessário criar um 
+# arquivo .gitignore na raiz do projeto e incluir o caminho do diretório dentro 
+# do arquivo
+

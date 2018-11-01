@@ -1,0 +1,5 @@
+# Criando um ambiente virtual 
+python3 -m venv nomeAmbienteVirtual
+
+# Ativando o ambiente virtual
+source projeto/nomeAmbienteVirtual/bin/activate

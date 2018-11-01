@@ -1,0 +1,20 @@
+### Compartilhamento de Arquivos com NFS-Server
+
+## No servidor de banco de dados 
+* apt-get install nfs-kernel-server
+
+## Editar o arquivo 
+* nano /etc/exports
+* /dir/ 192.168.0.145(rw,async,no_subtree_check)
+
+* service nfs-kernel-server restart
+* exportfs -a
+
+## No Cliente 
+* apt-get install nfs-common
+* sudo mount -t nfs 192.168.0.15:/home/ /mnt/SGBD
+
+
+
+
+

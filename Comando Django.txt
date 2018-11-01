@@ -1,0 +1,32 @@
+# Instalar o Django
+pip install django
+
+# Iniciar um projeto
+django-admin startproject aplicacao .	# Importante lembrar do "." no final
+
+# Prepara o ambiente para o desenvolvimento (incluindo banco de dados)
+python manage.py migrate
+
+# Executa o servidor na porta 8000
+python manage.py runserver
+
+# Criando um superusuário
+python manage.py createsuperuser
+
+# Criando uma applicação (Ex. clientes, fornecedores, compras, vendas, etc..)
+python manage.py startapp clientes 
+
+# Cria uma nova migração para um modelo 
+python manage.py makemigrations
+
+# Roda a migração criada
+python manage.py migrate
+
+# Shell de comando com o Django importado 
+python manage.py shell
+
+# Toda vez que for utilizar ImageField pela primeira vez em um projeto
+# precisa antes rodar
+pip install Pillow 
+python manage.pu makemigrations
+python manage.py migrate
