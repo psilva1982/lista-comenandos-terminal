@@ -1,5 +1,8 @@
 # Criando um ambiente virtual 
 python3 -m venv nomeAmbienteVirtual
 
+# Atualizar o PIP, WHEEL e SETUPTOOLS 
+python -m pip install --upgrade pip wheel setuptools
+
 # Ativando o ambiente virtual
 source projeto/nomeAmbienteVirtual/bin/activate
