@@ -7,3 +7,11 @@ git init
 # arquivo .gitignore na raiz do projeto e incluir o caminho do diretório dentro 
 # do arquivo
 
+## REMOVER ARQUIVO REMOTO
+git pull origin master
+
+git rm -r Arquivo Pasta
+
+git commit -m "Remove Arquivo e Pasta"
+
+git push origin master 
