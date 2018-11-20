@@ -15,3 +15,6 @@ git rm -r Arquivo Pasta
 git commit -m "Remove Arquivo e Pasta"
 
 git push origin master 
+
+# Sincronizar o repositório local a partir do repositório remoto 
+git pull
