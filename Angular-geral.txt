@@ -1,0 +1,16 @@
+# Criando um projeto com angular 
+npm install -g @angular/cli 
+
+# Cria um novo projeto
+ng new nome-projeto 
+
+cd nome-projeto
+
+# Executa o app
+ng serve 
+
+# Criar um componente 
+ng g component module-name
+
+# Criar um modoulo
+ng g module module-name
