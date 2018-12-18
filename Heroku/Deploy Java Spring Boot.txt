@@ -1,0 +1,35 @@
+# Fazer login no heroku através do heroku-cli
+heroku login
+
+# Acessar a pasta do projeto
+cd /pastadoprojeto
+
+# Criar aplicação no heroku 
+heroku create app-name
+
+# Heroku addons (Mysql)
+heroku addons:create jawsdb
+
+# verificar a url de conexão com o banco de dados
+heroku config:get JAWSDB_URL
+
+# Criando variáveis para os arquivos de configuração
+heroku config:set JDBC_DATABASE_URL=jdbc:mysql:// + (endereço após o "@" obtido através do "heroku config:get JAWSDB_URL")
+heroku config:set JDBC_DATABASE_USERNAME=(antes do ":")
+heroku config:set JDBC_DATABASE_PASSWORD=(após o ":" até o "@")
+
+# Criar o arquivo Procfile na raiz do projeto, com o seguinte conteúdo 
+# Ativa o profile "prod" de produção
+web: java -Dserver.port=$PORT -Dspring.profiles.active=prod $JAVA_OPTS -jar target/projeto*.jar
+
+# Adicionando e comitando as alterações
+git add .
+git commit -m "Deploy heroku"
+
+# Fazendo o deploy o heroku 
+git push heroku master
+
+# Visualizando os logs da aplicação 
+heroku logs --tail
+
+
