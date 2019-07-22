@@ -1,0 +1,8 @@
+# Cria o usuário no samba
+smbpasswd -a joao
+
+# Habilita a conta de usuário
+smbpasswd -e usuario
+
+# Altera a senha do usuário
+smbpasswd -U usuario

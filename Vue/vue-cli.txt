@@ -1,0 +1,29 @@
+# Vue CLI
+--------------------------
+
+# Instalar Vue-CLi
+npm install -g @vue/cli
+
+# Criar um projeto
+vue create nome-projeto
+
+# Adcionar plugins
+vue add @vue/nome-plugin
+
+# Rodar servidor
+npm run serve
+
+# Build
+npm run build 
+
+# Presets Customiados
+~home/user/.vuerc
+
+# Adicionando plugins ao projeto (Cria app desktop)
+vue add electron-builder
+
+# Executar projeto com electron
+npm run electron:serve
+
+# Adicionando o vuetify 
+vue add vuetify

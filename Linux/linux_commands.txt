@@ -1,0 +1,2 @@
+# Adiciona um usuário existente a um grupo existente
+usermod -a -G users severo

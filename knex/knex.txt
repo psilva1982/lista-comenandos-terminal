@@ -1,0 +1,8 @@
+# Instalar
+
+# Executar a última migração
+knex migrate:latest 
+
+# Rollback na última transação
+knex migrate:rollback
+
