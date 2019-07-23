@@ -1,0 +1,19 @@
+## https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+# Criar uma virtual env 
+conda create -n yourenvname python=x.x
+
+# Ativar a virtual env
+conda activate myenv
+
+# Instalar pacotes na virtual env
+conda install -n yourenvname [package]
+
+# Desativar a virtual env
+conda deactivate
+
+# Apagar a virtual env 
+conda remove -n yourenvname --all
+
+# Listar virtual-envs
+conda info --envs

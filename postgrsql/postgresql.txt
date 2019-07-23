@@ -1,0 +1,8 @@
+# Acessando via terminal
+su postgres
+
+psql 
+
+# Criando um super usuário
+CREATE ROLE usuario WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'senha';
+
