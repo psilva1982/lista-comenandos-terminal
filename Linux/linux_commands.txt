@@ -1,2 +1,14 @@
 # Adiciona um usuário existente a um grupo existente
 usermod -a -G users severo
+
+# Reduzir o tamanho das imagens maiores que 450x em uma pasta
+sudo apt-get install imagemagick
+
+for arquivo in *.*; do convert $arquivo -resize 450x450\> $arquivo; done
+
+# Route 
+# Adicionar a roda para uma rede através de uma placa de rede 
+route add -net 192.168.0.0 netmask 255.255.0.0 dev eth0 
+
+# Adicionar o gateway default
+route add default gw 192.168.0.1
