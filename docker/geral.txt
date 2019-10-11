@@ -1,0 +1,3 @@
+# Criar um container no modo daemon - Vai executar o container por 1000 segundos
+docker container run -d --name nome_container --net nome_rede  nome_imagem sleep 1000 
+
