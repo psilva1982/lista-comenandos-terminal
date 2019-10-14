@@ -1,0 +1,43 @@
+# Criando um documento
+POST /product/_doc
+{
+  "name": "Processing events with logstash",
+  "instructor": {
+    "firstName": "Paulo",
+    "lastName": "Cesar da Silva"
+  }
+}
+
+# Criando um novo documento com índice 1
+PUT /product/_doc/1
+{
+  "name": "Guia Completo do ElasticSearch",
+  "instructor": {
+    "firstName": "Paulo",
+    "lastName": "Cesar da Silva"
+  }
+}
+
+# Recuperando um registro
+GET /product/_doc/1
+
+# Inserindo um novo atributo 
+PUT /product/_doc/1
+{
+  "name": "Guia Completo do ElasticSearch",
+  "instructor": {
+    "firstName": "Paulo",
+    "lastName": "Cesar da Silva"
+  },
+  "price": 195
+}
+
+# Atualizando um registro
+POST /product/_doc/1/_update
+{
+  
+  "doc": {
+    "price": 200,
+    "tags": ["elasticsearch"]
+  }
+}
