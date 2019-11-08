@@ -17,3 +17,6 @@ conda remove -n yourenvname --all
 
 # Listar virtual-envs
 conda info --envs
+
+# Exportando a sua vm 
+conda env export > environment.yml
