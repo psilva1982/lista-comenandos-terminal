@@ -6,3 +6,9 @@ psql
 # Criando um super usuário
 CREATE ROLE usuario WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'senha';
 
+# Fazer backup
+pg_dump --host 10.10.36.51 --username bnip --port 5432 --format tar bnip.bkp
+
+# Restaurar banco 
+pg_restore --host 172.17.0.2 --port 5432 --username postgres --dbname bnip bnip.bkp
+
