@@ -1,0 +1,10 @@
+with engine.connect() as con:
+
+    rs = con.execute('SELECT * FROM book')
+
+    for row in rs:
+        print row
+
+Out[*]:
+(4, u'The Hobbit', u'Tolkien')
+(5, u'The Silmarillion', u'Tolkien')
