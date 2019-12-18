@@ -1,0 +1,7 @@
+# Editar arquivo /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# Reiniciar o banco
+
+# Aplicar as permissões para os usuários
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '<SenhaDoUsuario>' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

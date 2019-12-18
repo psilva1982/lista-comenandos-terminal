@@ -8,3 +8,11 @@ with engine.connect() as con:
 Out[*]:
 (4, u'The Hobbit', u'Tolkien')
 (5, u'The Silmarillion', u'Tolkien')
+
+
+##########################################
+
+connection = engine.connect()
+
+my_query = 'SELECT * FROM my_table'
+results = connection.execute(my_query).fetchall()

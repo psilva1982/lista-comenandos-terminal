@@ -1,1 +1,13 @@
 DELETE a FROM nomes AS a, nomes AS b WHERE a.nome=b.nome AND a.id < b.id
+
+
+
+delete from base_nacional.prisional_internacao a
+	where exists (select 1 from base_nacional.prisional_internacao b
+		where a."data"=b."data" and 
+			a.data_carga=b.data_carga and
+			a.movimentacao_id=b.movimentacao_id and
+			a.pessoa_id=b.pessoa_id and
+			a.unidade_penal_id=b.unidade_penal_id and
+			a.id < b.id
+	);

@@ -1,0 +1,13 @@
+# Exibe o usuário corrente da conexão
+select current_user;
+
+select current_database()
+
+select version()
+
+select current_time;
+
+psql -h 192.168.0.1 -p 5432 -d database -U usuario -W
+
+
+psql -c "select current_time" 

@@ -1,0 +1,19 @@
+# TESTADO EM DEBIAN 10 e UBUNTO 18
+
+PG_VER=11.6
+source /etc/os-release
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc |  apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ ${VERSION_CODENAME}-pgdg main" |  tee /etc/apt/sources.list.d/pgdg.list
+ apt-get update
+ apt-get install -y postgresql-${PG_VER%.*}
+
+PG_VER=11.6
+apt-get install -y unzip gcc make zlib1g-dev libreadline-dev postgresql-server-dev-${PG_VER%.*} bison flex
+wget https://ftp.postgresql.org/pub/source/v${PG_VER}/postgresql-${PG_VER}.tar.bz2 --quiet -O postgresql.tar.bz2
+tar xvf postgresql.tar.bz2
+cd postgresql-${PG_VER}
+./configure
+cd contrib/cube
+sed -i 's/#define CUBE_MAX_DIM (100)/#define CUBE_MAX_DIM (128)/' cubedata.h
+make USE_PGXS=1
+make USE_PGXS=1 install

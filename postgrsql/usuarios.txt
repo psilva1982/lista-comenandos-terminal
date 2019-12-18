@@ -1,0 +1,13 @@
+# Criando um database teste 
+create database teste; 
+
+# Criando usuario comum 
+create user teste with password '123456';
+
+# Definindo privilegios ao usuário para o database
+grant all privileges on database teste to teste; 
+
+
+# Alterar senha 
+
+
