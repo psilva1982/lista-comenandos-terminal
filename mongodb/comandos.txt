@@ -1,8 +1,16 @@
-# RESTAURAR UM EXEMPLO DE BASE DE DADOS 
+# RESTAURAR UM EXEMPLO DE BASE DE DADOS
+# SE NÃO ESPECIFICAR O NOME DA collection ELE UTILIZARA O NOME DO ARQUIVO 
 mongoimport --drop -d dbcurso C:\Users\julio\Downloads\dataset.json
 
-# 
+# Remoto 
+mongoimport --host <host:port> --username <user> --password <pass> --authenticationDatabase <authdb> --drop -d <db> dataset.json 
+
+# ESPECIFICANDO O NOME DA collection
 mongoimport --drop -d dbcurso -c restaurantes C:\Users\julio\Downloads\dataset.json
 
 # REALIZAR BACKUP  
 mongodump --collection restaurantes --db dbcurso --out C:\Users\julio\Downloads\backup-mongodb- curso.json
+mongodump --host <host:port> --username <user> --password <pass> --authenticationDatabase <authdb> --forceTableScan  --collection restaurantes --db dbcurso --out /tmp/teste 
+
+# CONVERTER BSON TO json
+bsondump --outFile /tmp/saida.json arquivo.bson
