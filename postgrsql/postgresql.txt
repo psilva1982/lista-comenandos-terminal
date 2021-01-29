@@ -9,6 +9,20 @@ CREATE ROLE usuario WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 
 # Fazer backup
 pg_dump --host 10.10.36.51 --username bnip --port 5432 --format tar bnip.bkp
 
+pg_dump -h localhost -p 5432 -U postgres -F c -b -v -f meudb_admin.backup meudb_admin
+
 # Restaurar banco 
 pg_restore --host 172.17.0.2 --port 5432 --username postgres --dbname bnip bnip.bkp
 
+# Usuário
+grant all privileges on database nome_da_base to "nome_do_usuario";
+
+# exportar uma query para csv 
+Copy (Select * From foo) To '/tmp/test.csv' With CSV DELIMITER ',' HEADER;
+
+# Delete com join 
+DELETE FROM tv_episodes USING data WHERE 
+tv_episodes.file_name = data.file_name AND 
+tv_episodes.path = data.path AND 
+tv_episodes.cd_name = 'MediaLibraryDrive' AND 
+data.cd_name IS NULL;

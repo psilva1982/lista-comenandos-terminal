@@ -29,3 +29,13 @@ conda create --name myenv --file spec-file.txt
 
 # Instalando pacotes a partir de um arquivo
 conda install --name myenv --file spec-file.txt
+
+# Create the environment from the environment.yml file
+conda env create -f environment.yml
+
+# Auto ativate
+conda config --set auto_activate_base false
+
+# Ativar env padrao
+conda activate base
+

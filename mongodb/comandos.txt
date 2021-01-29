@@ -1,0 +1,8 @@
+# RESTAURAR UM EXEMPLO DE BASE DE DADOS 
+mongoimport --drop -d dbcurso C:\Users\julio\Downloads\dataset.json
+
+# 
+mongoimport --drop -d dbcurso -c restaurantes C:\Users\julio\Downloads\dataset.json
+
+# REALIZAR BACKUP  
+mongodump --collection restaurantes --db dbcurso --out C:\Users\julio\Downloads\backup-mongodb- curso.json

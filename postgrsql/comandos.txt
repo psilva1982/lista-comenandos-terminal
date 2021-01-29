@@ -11,3 +11,10 @@ psql -h 192.168.0.1 -p 5432 -d database -U usuario -W
 
 
 psql -c "select current_time" 
+
+
+# Lista tabelas 
+\dt *.*;
+\dt nome_esquema.*; 
+
+# Lista schemas 
