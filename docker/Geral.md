@@ -61,6 +61,8 @@ docker container run -p 8080:80 nginx
 ```
 
 ### Mapear um diretório 
+* -v cria a pasta caso ela não exista
+* --mount type=bind,source="$(pwd)"/html,target=/usr/share/nginx/html - dá um erro caso a pasta não exista
 ```
 docker container run -p 8080:80 -v /home/public/html:/usr/share/nginx/html nginx
 ```
