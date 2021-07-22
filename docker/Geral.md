@@ -1,5 +1,9 @@
 # DOCKER
 
+## Extras
+* [docker-compose](Compose.md)
+* [Rede / Network](rede.md)
+
 ### Executar um container (Faz o download e executa) 
 * Este modo sempre cria um novo container
 ```
