@@ -61,11 +61,24 @@ docker container run -p 8080:80 nginx
 ```
 
 ### Mapear um diretório 
-* -v cria a pasta caso ela não exista
-* --mount type=bind,source="$(pwd)"/html,target=/usr/share/nginx/html - dá um erro caso a pasta não exista
+> -v cria a pasta caso ela não exista
+> 
+> --mount type=bind,source="$(pwd)"/html,target=/usr/share/nginx/html - dá um erro caso a pasta não exista
 ```
 docker container run -p 8080:80 -v /home/public/html:/usr/share/nginx/html nginx
 ```
+
+### Volumes
+> É possível compartilhar esse volumes entre volumes
+```
+docker volume create meuvolume
+
+```
+> Atachando um volume a um container 
+```
+docker run --name nginx -d --mount type=volume,source=meuvolume,target=/app nginx
+```
+
 
 ### Executar um container com o modo daemon
 * Define um nome para o container
