@@ -79,6 +79,10 @@ docker volume create meuvolume
 docker run --name nginx -d --mount type=volume,source=meuvolume,target=/app nginx
 ```
 
+### Excluindo volumes não utilizados
+```
+docker volume prune
+```
 
 ### Executar um container com o modo daemon
 * Define um nome para o container
